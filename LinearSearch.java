@@ -26,7 +26,7 @@ break;
      if(pos==-1){
       System.out.println("Item doesn't exist.");
      }else{
-      System.out.println("Item " + item + " fount at : " + (pos+1));
+      System.out.println("Item " + item + " fount at : " + pos);
      }
 
     sc.close();
