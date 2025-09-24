@@ -4,7 +4,7 @@ public class InsertionSort {
 
   static void insertion_sort(int[] arr, int n) {
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i < arr.length; i++) {
       int key = arr[i];
       int j = i - 1;
 
@@ -29,14 +29,14 @@ public class InsertionSort {
     }
 
     System.out.println("Before sorting the array elements : ");
-    for (int i = 0; i < n; i++) {
-      System.out.print(arr[i] + " ");
+    for (int num : arr) {
+      System.out.print(num + " ");
     }
     System.out.println();
     insertion_sort(arr, n);
     System.out.println("After sorting the array elements : ");
-    for (int i = 0; i < n; i++) {
-      System.out.print(arr[i] + " ");
+    for (int num : arr) {
+      System.out.print(num + " ");
     }
 
     sc.close();
