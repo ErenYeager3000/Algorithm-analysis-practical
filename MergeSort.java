@@ -1,28 +1,36 @@
 import java.util.Scanner;
 
-public class SelectionSort {
+public class MergeSort {
 
-  static void selection_sort(int[] arr, int n) {
-    int size = arr.length;
-    int minIndex = -1;
-    int temp = 0;
+  private static void merge(int[] arr, int l, int mid, int r){
+int n1 = mid - l + 1;
+int n2 = r - mid;
 
-    for (int i = 0; i < size - 1; i++) {
-      minIndex = i;
-      for (int j = i + 1; j < size; j++) {
-        if (arr[minIndex] > arr[j]) {
-          minIndex = j;
-        }
+int[] lArr = new int[n1];
+int[] rArr = new int[n2];
 
-      }
-      temp = arr[minIndex];
-      arr[minIndex] = arr[i];
-      arr[i] = temp;
-    }
+for(int i = 0; i < n1; i++){
+  lArr[i] = arr[l+i];
+}
+for(int j = 0; j < n2; j++){
+  rArr[j] = arr[mid+1+j];
+}
+
 
   }
 
-  public static void main(String[] args) {
+public static void merge_sort(int[] arr, int l, int r){
+  if(l < r){
+    int mid = (l + r) / 2;
+    merge_sort(arr, l, mid);
+    merge_sort(arr, mid+1, r);
+
+    merge(arr, l, mid, r);
+  }
+
+
+}
+   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
     System.out.print("Enter the number how many elements you want to enter : ");
@@ -39,7 +47,7 @@ public class SelectionSort {
       System.out.print(num + " ");
     }
 
-    selection_sort(arr, n);
+    merge_sort(arr,0,n-1);
     System.out.println();
 
     System.out.println("After sorting the array : ");
