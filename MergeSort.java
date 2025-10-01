@@ -15,9 +15,31 @@ for(int i = 0; i < n1; i++){
 for(int j = 0; j < n2; j++){
   rArr[j] = arr[mid+1+j];
 }
+int i = 0, j = 0, k = l;
+while(i < n1 && j < n2){
+if(lArr[i] <= rArr[j]){
+  arr[k] = lArr[i];
+  i++;
+}else{
+  arr[k] = rArr[j];
+  j++;
+}
+k++;
+}
+   while (i < n1) {
+            arr[k] = lArr[i];
+            i++;
+            k++;
+        }
 
-
-  }
+        // Copy remaining elements of right[], if any
+        while (j < n2) {
+            arr[k] = rArr[j];
+            j++;
+            k++;
+        }
+    }
+  
 
 public static void merge_sort(int[] arr, int l, int r){
   if(l < r){
