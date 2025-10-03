@@ -32,7 +32,6 @@ k++;
             k++;
         }
 
-        // Copy remaining elements of right[], if any
         while (j < n2) {
             arr[k] = rArr[j];
             j++;
